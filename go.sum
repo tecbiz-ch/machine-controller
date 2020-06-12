@@ -462,6 +462,12 @@ github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612112841-1397421df40f h1:iOkm5z
 github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612112841-1397421df40f/go.mod h1:IrS4ZVT/knS+Hh1NfJ0XxpcTJX/C/t2tjl2iiZd0xDQ=
 github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612181632-edf12dac6ef6 h1:js2+nsS11TG3toml9BQLN5uLtA2G/BIbU7RFoAqopXk=
 github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612181632-edf12dac6ef6/go.mod h1:IrS4ZVT/knS+Hh1NfJ0XxpcTJX/C/t2tjl2iiZd0xDQ=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612185637-b01f76399ec5 h1:kj/NOmv6uz+q86EYxJY9Zwe7VkGkFeUtrrif9D8C6GU=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612185637-b01f76399ec5/go.mod h1:1/mQF6JdtodM3sGFbE3QbwOwUczkLtaNe65sLZxla7w=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612190523-a70aa4cb56e4 h1:+dyYKm9hbIBP472l51/aHUJeVOGr6REMD9bhOrOFbMw=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612190523-a70aa4cb56e4/go.mod h1:1/mQF6JdtodM3sGFbE3QbwOwUczkLtaNe65sLZxla7w=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612192908-281948f65855 h1:vHG1ProOISF60GzGI2KNp0jDVF/XIQVrAwQJWVTlWS0=
+github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612192908-281948f65855/go.mod h1:1/mQF6JdtodM3sGFbE3QbwOwUczkLtaNe65sLZxla7w=
 github.com/tent/http-link-go v0.0.0-20130702225549-ac974c61c2f9 h1:/Bsw4C+DEdqPjt8vAqaC9LAqpAQnaCQQqmolqq3S1T4=
 github.com/tent/http-link-go v0.0.0-20130702225549-ac974c61c2f9/go.mod h1:RHkNRtSLfOK7qBTHaeSX1D6BNpI3qw7NTxsmNr4RvN8=
 github.com/tmc/grpc-websocket-proxy v0.0.0-20170815181823-89b8d40f7ca8/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=

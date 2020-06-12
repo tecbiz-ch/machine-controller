@@ -40,9 +40,12 @@ require (
 	github.com/hetznercloud/hcloud-go v1.15.1
 	github.com/huandu/xstrings v1.0.0 // indirect
 	github.com/imdario/mergo v0.3.8 // indirect
+	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
+	github.com/k0kubun/pp v3.0.1+incompatible // indirect
 	github.com/linode/linodego v0.7.1
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/mattbaird/jsonpatch v0.0.0-20171005235357-81af80346b1a
+	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/oklog/run v1.0.0
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/packethost/packngo v0.1.1-0.20190410075950-a02c426e4888
@@ -53,7 +56,7 @@ require (
 	github.com/prometheus/client_golang v1.4.1
 	github.com/prometheus/procfs v0.0.10 // indirect
 	github.com/sethvargo/go-password v0.1.2
-	github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612181632-edf12dac6ef6
+	github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612192908-281948f65855
 	github.com/tent/http-link-go v0.0.0-20130702225549-ac974c61c2f9 // indirect
 	github.com/vincent-petithory/dataurl v0.0.0-20160330182126-9a301d65acbb // indirect
 	github.com/vmware/govmomi v0.22.2

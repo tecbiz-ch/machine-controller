@@ -300,8 +300,6 @@ func (p *provider) SetMetricsForMachines(machines v1alpha1.MachineList) error {
 }
 
 func (p *provider) Validate(spec v1alpha1.MachineSpec) error {
-	ctx := context.Background()
-
 	c, pc, err := p.getConfig(spec.ProviderSpec)
 	if err != nil {
 		return fmt.Errorf("failed to parse config: %v", err)
@@ -331,23 +329,32 @@ func (p *provider) Validate(spec v1alpha1.MachineSpec) error {
 		return errors.New("imagename is missing")
 	}
 
+	klog.V(6).Infof("Validate Cluster %s", c.Cluster)
+	klog.V(6).Infof("Validate User %s", c.Username)
+	klog.V(6).Infof("Validate PASS %s", c.Password)
+	klog.V(6).Infof("Validate URL %s", c.NutanixURL)
 	client := getClient(c.Username, c.Password, c.NutanixURL)
 
-	klog.V(6).Infof("Validate Cluster %s", c.Cluster)
-
+	klog.V(4).Info("Vor CTX")
+	ctx := context.Background()
+	klog.V(4).Info("NACH CTX")
+	klog.V(4).Info("Vor CLUSTER GET")
 	_, err = client.Cluster.Get(ctx, c.Cluster)
 	if err != nil {
-		return fmt.Errorf("cluster not found: %v", err)
+		klog.V(6).Infof("error %s", "dd")
+		klog.V(6).Infof("error %v", err)
+
+		return fmt.Errorf("cluster not found, error = %v", err)
 	}
 
-	klog.V(4).Infof("Validate Image %s", c.ImageName)
+	klog.V(4).Infof("Validate Image %s, error = %v", c.ImageName)
 
 	_, err = client.Image.Get(ctx, c.ImageName)
 	if err != nil {
 		return err
 	}
 
-	klog.V(4).Infof("Validate Subnet %s", c.SubnetName)
+	klog.V(4).Infof("Validate Subnet %s, error = %v", c.SubnetName)
 
 	_, err = client.Subnet.Get(ctx, c.SubnetName)
 	if err != nil {
@@ -382,11 +389,11 @@ func (p *provider) getConfig(s v1alpha1.ProviderSpec) (*Config, *providerconfigt
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to get the value of \"username\" field, error = %v", err)
 	}
-	c.Password, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Username, "NUTANIX_PASSWORD")
+	c.Password, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Password, "NUTANIX_PASSWORD")
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to get the value of \"password\" field, error = %v", err)
 	}
-	c.NutanixURL, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Username, "NUTANIX_URL")
+	c.NutanixURL, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.NutanixURL, "NUTANIX_URL")
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to get the value of \"nutanixurl\" field, error = %v", err)
 	}
@@ -414,16 +421,23 @@ func (p *provider) getConfig(s v1alpha1.ProviderSpec) (*Config, *providerconfigt
 	return &c, &pconfig, err
 }
 
-func getClient(username, password, apiurl string) *nutanix.Client {
+func getClient(username, password, apiurl string) nutanix.Client {
+	klog.V(4).Info("in getClient")
+
 	configCreds := nutanix.Credentials{
 		Username: username,
 		Password: password,
 	}
+	klog.V(4).Info("nach  configCreds")
+
 	opts := []nutanix.ClientOption{
 		nutanix.WithCredentials(&configCreds),
 		nutanix.WithEndpoint(apiurl),
 	}
-	client := nutanix.NewClient(opts...)
+	klog.V(4).Info("nach  opts")
 
-	return client
+	client := nutanix.NewClient(opts...)
+	klog.V(4).Info("nach NewClient")
+
+	return *client
 }

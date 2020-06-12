@@ -14,7 +14,7 @@
 
 SHELL = /bin/bash -eu -o pipefail
 
-GO_VERSION = 1.13.8
+GO_VERSION = 1.14.3
 export GOOS := linux
 
 export CGO_ENABLED := 0
@@ -32,6 +32,9 @@ LDFLAGS ?= -ldflags '-s -w'
 
 IMAGE_TAG = \
 		$(shell echo $$(git rev-parse HEAD && if [[ -n $$(git status --porcelain) ]]; then echo '-dirty'; fi)|tr -d ' ')
+
+
+IMAGE_TAG = dev
 IMAGE_NAME = $(REGISTRY)/$(REGISTRY_NAMESPACE)/machine-controller:$(IMAGE_TAG)
 
 OS = centos coreos ubuntu sles rhel flatcar
