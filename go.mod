@@ -53,6 +53,7 @@ require (
 	github.com/prometheus/client_golang v1.4.1
 	github.com/prometheus/procfs v0.0.10 // indirect
 	github.com/sethvargo/go-password v0.1.2
+	github.com/tecbiz-ch/nutanix-go-sdk v0.0.0-20200612181632-edf12dac6ef6
 	github.com/tent/http-link-go v0.0.0-20130702225549-ac974c61c2f9 // indirect
 	github.com/vincent-petithory/dataurl v0.0.0-20160330182126-9a301d65acbb // indirect
 	github.com/vmware/govmomi v0.22.2
@@ -66,7 +67,7 @@ require (
 	golang.org/x/mod v0.2.0 // indirect
 	golang.org/x/net v0.0.0-20200202094626-16171245cfb2 // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sys v0.0.0-20200217220822-9197077df867 // indirect
+	golang.org/x/sys v0.0.0-20200610111108-226ff32320da // indirect
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	golang.org/x/tools v0.0.0-20200219054238-753a1d49df85 // indirect
 	gonum.org/v1/gonum v0.6.2 // indirect

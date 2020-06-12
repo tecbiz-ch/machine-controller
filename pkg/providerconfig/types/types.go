@@ -56,6 +56,7 @@ const (
 	CloudProviderVsphere      CloudProvider = "vsphere"
 	CloudProviderFake         CloudProvider = "fake"
 	CloudProviderAlibaba      CloudProvider = "alibaba"
+	CloudProviderNutanix      CloudProvider = "nutanix"
 )
 
 var (
@@ -85,6 +86,7 @@ var (
 		CloudProviderVsphere,
 		CloudProviderFake,
 		CloudProviderAlibaba,
+		CloudProviderNutanix,
 	}
 )
 

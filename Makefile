@@ -15,6 +15,7 @@
 SHELL = /bin/bash -eu -o pipefail
 
 GO_VERSION = 1.13.8
+export GOOS := linux
 
 export CGO_ENABLED := 0
 
@@ -25,7 +26,7 @@ export GIT_TAG ?= $(shell git tag --points-at HEAD)
 export GOFLAGS?=-mod=readonly -trimpath
 
 REGISTRY ?= docker.io
-REGISTRY_NAMESPACE ?= kubermatic
+REGISTRY_NAMESPACE ?= simonfuhrer
 
 LDFLAGS ?= -ldflags '-s -w'
 
